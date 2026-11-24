@@ -21,11 +21,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit proprietary files
 $(call inherit-product, vendor/motorola/msm8953-common/msm8953-common-vendor.mk)
 
-# Common Tree Path
-COMMON_PATH := device/motorola/msm8953-common
+# The common files live in this tree now
+COMMON_PATH := device/motorola/ali
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+# (the Soong namespace for this directory is added from BoardConfig.mk/device.mk)
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \

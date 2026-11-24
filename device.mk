@@ -80,8 +80,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
 
-# Inherit from motorola msm8953-common
-$(call inherit-product, device/motorola/msm8953-common/msm8953.mk)
+# Shared msm8953 configuration (merged into this tree)
+$(call inherit-product, $(DEVICE_PATH)/msm8953.mk)
 
 #Soong target hals patch to caf
 PRODUCT_SOONG_NAMESPACES += \

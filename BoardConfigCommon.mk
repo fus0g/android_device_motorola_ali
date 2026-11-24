@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-COMMON_PATH := device/motorola/msm8953-common
+COMMON_PATH := device/motorola/ali
 
 BOARD_VENDOR := motorola
 

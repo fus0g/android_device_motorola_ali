@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from motorola msm8953-common
--include device/motorola/msm8953-common/BoardConfigCommon.mk
+# Shared msm8953 board configuration (merged into this tree)
+-include device/motorola/ali/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/ali
 
