@@ -190,6 +190,8 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
+    init.root.usb.rc \
+    init.ali_dbg.sh \
     init.target.rc \
     ueventd.qcom.rc
 
