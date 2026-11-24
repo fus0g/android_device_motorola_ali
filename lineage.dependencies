@@ -16,5 +16,11 @@
     "repository": "LineageOS/android_system_qcom",
     "target_path": "system/qcom",
     "branch": "lineage-18.1"
+  },
+  {
+    "remote": "github",
+    "repository": "fus0g/android_kernel_motorola_sdm450",
+    "target_path": "kernel/motorola/sdm450",
+    "branch": "lineage-18.1"
   }
 ]
