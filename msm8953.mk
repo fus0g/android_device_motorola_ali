@@ -248,8 +248,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay
+# DEVICE_PACKAGE_OVERLAYS for this directory is set once in device.mk
 
 # Power
 PRODUCT_PACKAGES += \
