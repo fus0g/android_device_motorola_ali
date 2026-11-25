@@ -145,6 +145,11 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_SOURCE := kernel/motorola/sdm450
 
+# Tell the Qualcomm CAF HALs (media, ...) which kernel UAPI they are built
+# against: with 4.9 they define _TARGET_KERNEL_VERSION_49_ and use the 4.9
+# V4L2/vidc names and enum values.
+TARGET_KERNEL_VERSION := 4.9
+
 # The 4.9 kernel has no android_usb gadget: have init use ConfigFS and bind
 # the dwc3 UDC (see rootdir/etc/init.root.usb.rc). SELinux is permissive
 # during kernel bring-up so denials cannot hide adb/logs; remove when done.
