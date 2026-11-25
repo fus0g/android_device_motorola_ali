@@ -135,6 +135,3 @@ persist.rcs.supported=1
 
 # Wifi
 wifi.interface=wlan0
-
-# Camera: 4.9 kernel does not deliver CPP-diverted buffers; let the ISP do scaling
-persist.vendor.camera.isp.ppbypass=1
