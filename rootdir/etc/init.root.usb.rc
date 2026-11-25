@@ -71,13 +71,3 @@ on property:sys.usb.config=midi && property:sys.usb.configfs=1
 
 on property:sys.usb.config=midi,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idProduct 0x4ee9
-
-# ---- kernel bring-up debug: dump USB state to /cache for recovery to read ----
-on property:sys.boot_completed=1
-    start ali_dbg
-
-service ali_dbg /system/bin/sh /init.ali_dbg.sh
-    user root
-    group root system shell
-    disabled
-    oneshot

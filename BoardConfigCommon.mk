@@ -151,12 +151,9 @@ TARGET_KERNEL_SOURCE := kernel/motorola/sdm450
 TARGET_KERNEL_VERSION := 4.9
 
 # The 4.9 kernel has no android_usb gadget: have init use ConfigFS and bind
-# the dwc3 UDC (see rootdir/etc/init.root.usb.rc). SELinux is permissive
-# during kernel bring-up so denials cannot hide adb/logs; remove when done.
+# the dwc3 UDC (see rootdir/etc/init.root.usb.rc).
 ifeq ($(TARGET_KERNEL_SOURCE),kernel/motorola/sdm450)
 BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true androidboot.usbcontroller=7000000.dwc3
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += printk.devkmsg=on
 endif
 
 # Clang
