@@ -38,14 +38,6 @@ dump_state() {
 sleep 25
 dump_state $O/state1.txt
 
-# Re-run Android's own USB setup once: if it was only an ordering problem this
-# brings the gadget up.
-setprop sys.usb.config none
-sleep 2
-setprop sys.usb.config mtp,adb
-sleep 8
-dump_state $O/state2.txt
-
 getprop > $O/props.txt 2>&1
 dmesg > $O/dmesg.txt 2>&1
 logcat -d -b all > $O/logcat.txt 2>&1
