@@ -158,7 +158,7 @@ endif
 
 # Clang
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := r383902b
+TARGET_KERNEL_CLANG_VERSION := r383902
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
@@ -225,4 +225,3 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
--include vendor/motorola/msm8953-common/BoardConfigVendor.mk

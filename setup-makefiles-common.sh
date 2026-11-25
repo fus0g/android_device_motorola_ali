@@ -21,28 +21,17 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-# Initialize the helper for common
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+# Single vendor tree: vendor/${VENDOR}/${DEVICE} holds the common and the device blobs
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
 # Warning headers and guards
-write_headers "albus ali potter sanders"
+write_headers
 
-# The standard common blobs
+# The standard common blobs, then the device blobs
 write_makefiles "${MY_DIR}/proprietary-files-common.txt" true
+if [ -s "${MY_DIR}/proprietary-files.txt" ]; then
+    write_makefiles "${MY_DIR}/proprietary-files.txt" true
+fi
 
 # Finish
 write_footers
-
-if [ -s "${MY_DIR}/proprietary-files.txt" ]; then
-    # Reinitialize the helper for device
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
-
-    # Warning headers and guards
-    write_headers
-
-    # The standard device blobs
-    write_makefiles "${MY_DIR}/proprietary-files.txt" true
-
-    # Finish
-    write_footers
-fi

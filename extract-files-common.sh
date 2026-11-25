@@ -100,7 +100,7 @@ function blob_fixup() {
 
 if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
-    setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
+    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
     extract "${MY_DIR}/proprietary-files-common.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
@@ -108,7 +108,7 @@ fi
 if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device
     source "${MY_DIR}/extract-files.sh"
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false false
 
     extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
