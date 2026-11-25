@@ -60,12 +60,12 @@
 	<ctl name="AIF2TX2 Input 3 Volume" value="0" />
 	<ctl name="SLIMTX5 Input 1" value="None" />
 	<ctl name="SLIMTX6 Input 1" value="None" />
-	<ctl name="OUT1L Input 1" value="None" />
-	<ctl name="OUT1R Input 1" value="None" />
-	<ctl name="OUT1 Digital Volume" id="0" value="0" />
-	<ctl name="OUT1 Digital Volume" id="1" value="0" />
-	<ctl name="OUT1 Digital Switch" id="0" value="0" />
-	<ctl name="OUT1 Digital Switch" id="1" value="0" />
+	<ctl name="HPOUT1L Input 1" value="None" />
+	<ctl name="HPOUT1R Input 1" value="None" />
+	<ctl name="HPOUT1 Digital Volume" id="0" value="0" />
+	<ctl name="HPOUT1 Digital Volume" id="1" value="0" />
+	<ctl name="HPOUT1 Digital Switch" id="0" value="0" />
+	<ctl name="HPOUT1 Digital Switch" id="1" value="0" />
 	<ctl name="SPKDAT High Performance Switch" value="1" />
 	<ctl name="PDM Mux" value="On" />
 	<ctl name="Voip Mode Config" value="12" />
@@ -217,11 +217,11 @@
 	<ctl name="Output Rate 1" value="SYNCCLK rate 3" />
 	<ctl name="ISRC2 FSH" value="SYNCCLK rate 3" />
 	<ctl name="ISRC2 FSL" value="SYNCCLK rate 1" />
-	<ctl name="ISRC2DEC1 Input" value="IN1L" />
-	<ctl name="ISRC2DEC2 Input" value="IN2L" />
-	<ctl name="ISRC2DEC4 Input" value="IN2R" />
-	<ctl name="ISRC2INT1 Input" value="None" />
-	<ctl name="ISRC2INT2 Input" value="None" />
+	<ctl name="ISRC2DEC1 Input 1" value="IN1L" />
+	<ctl name="ISRC2DEC2 Input 1" value="IN2L" />
+	<ctl name="ISRC2DEC4 Input 1" value="IN2R" />
+	<ctl name="ISRC2INT1 Input 1" value="None" />
+	<ctl name="ISRC2INT2 Input 1" value="None" />
 	<ctl name="CLKSEL MUX" value="PDM" />
 	<ctl name="SPKDATL Input 1" value="DSP1.1" />
 	<ctl name="SPKDAT High Performance Switch" value="1" />
@@ -815,20 +815,20 @@
 
 	<path name="headphones">
 		<ctl name="SLIM_5_RX Channels" value="Two" />
-		<ctl name="ISRC2INT1 Input" value="SLIMRX5" />
-		<ctl name="OUT1L Input 1" value="ISRC2INT1" />
-		<ctl name="ISRC2INT2 Input" value="SLIMRX6" />
-		<ctl name="OUT1R Input 1" value="ISRC2INT2" />
-		<ctl name="OUT1 Digital Volume" id="0" value="120" />
-		<ctl name="OUT1 Digital Volume" id="1" value="120" />
-		<ctl name="OUT1 Digital Switch" id="0" value="1" />
-		<ctl name="OUT1 Digital Switch" id="1" value="1" />
+		<ctl name="ISRC2INT1 Input 1" value="SLIMRX5" />
+		<ctl name="HPOUT1L Input 1" value="ISRC2INT1" />
+		<ctl name="ISRC2INT2 Input 1" value="SLIMRX6" />
+		<ctl name="HPOUT1R Input 1" value="ISRC2INT2" />
+		<ctl name="HPOUT1 Digital Volume" id="0" value="120" />
+		<ctl name="HPOUT1 Digital Volume" id="1" value="120" />
+		<ctl name="HPOUT1 Digital Switch" id="0" value="1" />
+		<ctl name="HPOUT1 Digital Switch" id="1" value="1" />
 	</path>
 
 	<path name="line">
 		<path name="headphones" />
-		<ctl name="OUT1 Digital Volume" id="0" value="128" />
-		<ctl name="OUT1 Digital Volume" id="1" value="128" />
+		<ctl name="HPOUT1 Digital Volume" id="0" value="128" />
+		<ctl name="HPOUT1 Digital Volume" id="1" value="128" />
 	</path>
 
 	<path name="headset-mic">
@@ -836,7 +836,7 @@
 		<ctl name="IN1R Mux" value="B" />
 		<ctl name="IN1R Digital Volume" value="128" />
 		<ctl name="IN1R Volume" value="16" />
-		<ctl name="ISRC2DEC4 Input" value="IN1R" />
+		<ctl name="ISRC2DEC4 Input 1" value="IN1R" />
 		<ctl name="SLIMTX1 Input 1" value="ISRC2DEC4" />
 	</path>
 
@@ -875,13 +875,13 @@
 
 	<path name="voice-headphones">
 		<ctl name="SLIM_0_RX Channels" value="One" />
-		<ctl name="ISRC2INT1 Input" value="SLIMRX1" />
-		<ctl name="OUT1L Input 1" value="ISRC2INT1" />
-		<ctl name="OUT1R Input 1" value="ISRC2INT1" />
-		<ctl name="OUT1 Digital Volume" id="0" value="128" />
-		<ctl name="OUT1 Digital Volume" id="1" value="128" />
-		<ctl name="OUT1 Digital Switch" id="0" value="1" />
-		<ctl name="OUT1 Digital Switch" id="1" value="1" />
+		<ctl name="ISRC2INT1 Input 1" value="SLIMRX1" />
+		<ctl name="HPOUT1L Input 1" value="ISRC2INT1" />
+		<ctl name="HPOUT1R Input 1" value="ISRC2INT1" />
+		<ctl name="HPOUT1 Digital Volume" id="0" value="128" />
+		<ctl name="HPOUT1 Digital Volume" id="1" value="128" />
+		<ctl name="HPOUT1 Digital Switch" id="0" value="1" />
+		<ctl name="HPOUT1 Digital Switch" id="1" value="1" />
 		<ctl name="OSPL Rx" value="Disable" />
 	</path>
 
@@ -896,21 +896,21 @@
 	<path name="speaker-and-headphones">
 		<path name="speaker" />
 		<ctl name="SLIM_0_RX Channels" value="Two" />
-		<ctl name="ISRC2INT1 Input" value="SLIMRX1" />
-		<ctl name="OUT1L Input 1" value="ISRC2INT1" />
-		<ctl name="ISRC2INT2 Input" value="SLIMRX2" />
-		<ctl name="OUT1R Input 1" value="ISRC2INT2" />
-		<ctl name="OUT1 Digital Volume" id="0" value="109" />
-		<ctl name="OUT1 Digital Volume" id="1" value="109" />
-		<ctl name="OUT1 Digital Switch" id="0" value="1" />
-		<ctl name="OUT1 Digital Switch" id="1" value="1" />
+		<ctl name="ISRC2INT1 Input 1" value="SLIMRX1" />
+		<ctl name="HPOUT1L Input 1" value="ISRC2INT1" />
+		<ctl name="ISRC2INT2 Input 1" value="SLIMRX2" />
+		<ctl name="HPOUT1R Input 1" value="ISRC2INT2" />
+		<ctl name="HPOUT1 Digital Volume" id="0" value="109" />
+		<ctl name="HPOUT1 Digital Volume" id="1" value="109" />
+		<ctl name="HPOUT1 Digital Switch" id="0" value="1" />
+		<ctl name="HPOUT1 Digital Switch" id="1" value="1" />
 		<ctl name="OSPL Rx" value="Disable" />
 	</path>
 
 	<path name="speaker-and-line">
 		<path name="speaker-and-headphones" />
-		<ctl name="OUT1 Digital Volume" id="0" value="128" />
-		<ctl name="OUT1 Digital Volume" id="1" value="128" />
+		<ctl name="HPOUT1 Digital Volume" id="0" value="128" />
+		<ctl name="HPOUT1 Digital Volume" id="1" value="128" />
 	</path>
 
 	<path name="afe-proxy">
@@ -1047,7 +1047,7 @@
 		<ctl name="IN1R Mux" value="B" />
 		<ctl name="IN1R Digital Volume" value="128" />
 		<ctl name="IN1R Volume" value="0" />
-		<ctl name="ISRC2DEC4 Input" value="IN1R" />
+		<ctl name="ISRC2DEC4 Input 1" value="IN1R" />
 		<ctl name="SLIMTX1 Input 1" value="ISRC2DEC4" />
 	</path>
 
