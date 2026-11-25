@@ -75,7 +75,7 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     private SensorEventListener mProxListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
-            mProxIsCovered = event.values[0] < mProx.getMaximumRange();
+            mProxIsCovered = event.values[0] < Math.min(mProx.getMaximumRange(), 1.0f);
         }
 
         @Override

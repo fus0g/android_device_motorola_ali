@@ -68,7 +68,7 @@ public class ProximitySilencer extends PhoneStateListener implements SensorEvent
 
     @Override
     public synchronized void onSensorChanged(SensorEvent event) {
-        boolean isNear = event.values[0] < mSensor.getMaximumRange();
+        boolean isNear = event.values[0] < Math.min(mSensor.getMaximumRange(), 1.0f);
         long now = System.currentTimeMillis();
 
         if (isNear){
