@@ -14,3 +14,7 @@ dontaudit qti_init_shell default_prop:property_service set;
 
 # Silence DAC denials
 dontaudit qti_init_shell self:capability { dac_override dac_read_search };
+
+# 4.9 bring-up: denials seen with SELinux enforcing
+allow qti_init_shell sysfs_leds:file setattr;
+set_prop(qti_init_shell, ctl_start_prop)

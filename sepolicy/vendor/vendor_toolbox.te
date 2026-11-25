@@ -52,3 +52,7 @@ allow vendor_toolbox {
     persist_time_file
     sensors_persist_file
 }:file { r_file_perms setattr };
+
+# 4.9 bring-up: denials seen with SELinux enforcing
+allow vendor_toolbox self:capability { dac_override dac_read_search };
+allow vendor_toolbox persist_audio_file:file getattr;
