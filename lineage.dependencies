@@ -1,15 +1,9 @@
 [
   {
     "remote": "github",
-    "repository": "Kizashi-Devices/android_vendor_motorola_msm8953-common",
-    "target_path": "vendor/motorola/msm8953-common",
-    "branch": "relay"
-  },
-  {
-    "remote": "github",
-    "repository": "Kizashi-Devices/android_vendor_motorola_ali",
+    "repository": "fus0g/android_vendor_motorola_ali",
     "target_path": "vendor/motorola/ali",
-    "branch": "relay"
+    "branch": "lineage-19.1"
   },
   {
     "remote": "github",
@@ -21,6 +15,6 @@
     "remote": "github",
     "repository": "fus0g/android_kernel_motorola_sdm450",
     "target_path": "kernel/motorola/sdm450",
-    "branch": "lineage-18.1"
+    "branch": "lineage-19.1"
   }
 ]
