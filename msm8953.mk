@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.1-impl_32 \
     android.hardware.soundtrigger@2.1-service \
     audiod \
-    audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     libaacwrapper \
@@ -151,7 +150,6 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java \
     libhidltransport \
@@ -357,6 +355,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Shims
 PRODUCT_PACKAGES += \
     libcutils_shim \
+    libcutils_shim.vendor \
     libmemset_shim \
     libqsap_shim
 
