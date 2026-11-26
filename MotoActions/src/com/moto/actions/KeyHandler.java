@@ -46,6 +46,7 @@ import android.os.PowerManager.WakeLock;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
+import android.os.VibrationAttributes;
 import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -78,10 +79,8 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final String GESTURE_WAKEUP_REASON = "keyhandler-gesture-wakeup";
     private static final int GESTURE_WAKELOCK_DURATION = 3000;
-    private static final AudioAttributes VIBRATION_ATTRIBUTES = new AudioAttributes.Builder()
-            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-            .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-            .build();
+    private static final VibrationAttributes VIBRATION_ATTRIBUTES =
+            VibrationAttributes.createForUsage(VibrationAttributes.USAGE_TOUCH);
     private final Context mContext;
     private final PowerManager mPowerManager;
     WakeLock mGestureWakeLock;

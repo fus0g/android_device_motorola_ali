@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.moto.actions"
     android:sharedUserId="android.uid.system"
     >
@@ -98,5 +99,11 @@
             android:label="@string/screen_off_gestures_title"
             android:theme="@style/MotoActions">
         </activity>
+
+        <!-- Two libraries ship the same androidx.startup provider with different authorities -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.moto.actions.androidx-startup"
+            tools:replace="android:authorities" />
   </application>
 </manifest>
