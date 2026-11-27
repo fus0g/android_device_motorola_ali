@@ -127,6 +127,7 @@ USE_DEVICE_SPECIFIC_GPS := true
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(COMMON_PATH)/framework_compatibility_matrix.xml
 TARGET_FS_CONFIG_GEN := \
     $(COMMON_PATH)/configs/config.fs \
     $(COMMON_PATH)/configs/mot_aids.fs
@@ -143,6 +144,8 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
+# Android 14 recovery does not fit the 25 MB partition with gzip (kernel needs CONFIG_RD_XZ)
+BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_SOURCE := kernel/motorola/sdm450
 
 # Tell the Qualcomm CAF HALs (media, ...) which kernel UAPI they are built
@@ -158,7 +161,7 @@ endif
 
 # Clang
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := r383902
+TARGET_KERNEL_CLANG_VERSION := r450784e
 # 4.9 kbuild runs "ld -r" with no inputs, which lld rejects: keep GNU binutils for the kernel
 TARGET_KERNEL_LLVM_BINUTILS := false
 

@@ -31,9 +31,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0-impl_32 \
+    android.hardware.audio@6.0-impl_32 \
     android.hardware.audio.service_32 \
-    android.hardware.audio.effect@4.0-impl_32 \
+    android.hardware.audio.effect@6.0-impl_32 \
     android.hardware.soundtrigger@2.1-impl_32 \
     android.hardware.soundtrigger@2.1-service \
     audiod \
@@ -104,7 +104,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -144,8 +144,8 @@ PRODUCT_PACKAGES += \
 
 # health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health-service.example \
+    android.hardware.health-service.example_recovery
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -371,7 +371,7 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # USB HAL
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
+    android.hardware.usb@1.0-service
 
 # VNDK
 PRODUCT_PACKAGES += \
@@ -391,7 +391,7 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     dhcpcd.conf \
     hostapd \
     hostapd_cli \
@@ -407,7 +407,6 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
-    wpa_supplicant_wcn.conf
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
@@ -429,6 +428,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0.vendor \
     android.hardware.gnss@1.1.vendor \
     android.hardware.gnss@2.0.vendor \
+    android.hardware.health@1.0.vendor \
+    android.hardware.health@2.0.vendor \
+    libft2.vendor \
+    libhidlbase_shim \
     android.hardware.keymaster@3.0.vendor \
     android.hardware.power@1.2.vendor \
     android.system.net.netd@1.1.vendor \

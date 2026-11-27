@@ -60,6 +60,15 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        # Android 14: newer libutils aborts on pm-service's stack-allocated RefBase.
+        # libutils-v32.so is prebuilts/vndk/v32 libutils.so with its soname changed.
+        vendor/bin/pm-service)
+            "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
+            ;;
+        # Android 14 removed gBnConstructorMap from libhidlbase
+        vendor/lib/com.fingerprints.extension@1.0.so)
+            "${PATCHELF}" --add-needed libhidlbase_shim.so "${2}"
+            ;;
 
         # Fix xml version
         product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
