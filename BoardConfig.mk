@@ -36,6 +36,9 @@ PRODUCT_BOARD_PLATFORM := msm8996
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CONFIG := ali_defconfig
+ifneq ($(filter halium_%,$(TARGET_PRODUCT)),)
+TARGET_KERNEL_ADDITIONAL_CONFIG := halium.config
+endif
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/adspd.xml

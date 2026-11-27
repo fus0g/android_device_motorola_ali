@@ -15,9 +15,11 @@
 
 # inherit Moto G6 device config
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_ali.mk
+    $(LOCAL_DIR)/lineage_ali.mk \
+    $(LOCAL_DIR)/halium_ali.mk
 
 COMMON_LUNCH_CHOICES := \
+    halium_ali-userdebug \
     lineage_ali-user \
     lineage_ali-userdebug \
     lineage_ali-eng
