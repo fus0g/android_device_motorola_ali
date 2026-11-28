@@ -161,7 +161,8 @@ endif
 
 # Clang
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := r450784e
+TARGET_KERNEL_CLANG_VERSION := r416183b
+TARGET_KERNEL_CLANG_PATH := $(abspath prebuilts/clang/kernel/linux-x86/clang-r416183b)
 # 4.9 kbuild runs "ld -r" with no inputs, which lld rejects: keep GNU binutils for the kernel
 TARGET_KERNEL_LLVM_BINUTILS := false
 
@@ -170,6 +171,9 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Single slot device: Android 15 assumes A/B unless told otherwise
+AB_OTA_UPDATER := false
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

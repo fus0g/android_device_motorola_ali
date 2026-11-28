@@ -52,7 +52,6 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1-service \
     com.android.nfc_extras \
     SecureElement \
-    NfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
     Tag
@@ -89,4 +88,5 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/msm8996/display \
     hardware/qcom-caf/msm8996/media \
     hardware/qcom-caf/msm8996/audio \
+    hardware/qcom-caf/bt/libbt-vendor \
 

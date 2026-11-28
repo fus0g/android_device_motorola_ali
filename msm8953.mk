@@ -87,15 +87,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    copybit.msm8953 \
     gralloc.msm8953 \
-    hwcomposer.msm8953 \
-    memtrack.msm8953 \
+    hwcomposer.qcom \
+    vendor.qti.hardware.memtrack-service \
     libdisplayconfig \
-    libgenlock \
-    liboverlay \
     libqdMetaData.system \
     libvulkan \
     libtinyxml
@@ -356,13 +351,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     libcutils_shim \
     libcutils_shim.vendor \
-    libmemset_shim \
-    libqsap_shim
+    libmemset_shim
 
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 DONT_DEXPREOPT_PREBUILTS := true
 USE_DEX2OAT_DEBUG := false
@@ -375,6 +368,17 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
+    libutils-v32 \
+    libaudioroute.vendor \
+    libdrm.vendor \
+    libion.vendor \
+    libpower.vendor \
+    libsqlite.vendor \
+    libssl.vendor \
+    libsysutils.vendor \
+    libtinycompress \
+    libtinycompress_32 \
+    vendor.display.config@1.0.vendor \
     vndk_package \
     libstdc++.vendor
 
@@ -397,8 +401,6 @@ PRODUCT_PACKAGES += \
     hostapd_cli \
     libnl_2 \
     libnl \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwifi-hal-qcom \
     libwpa_client \
     wcnss_service \
@@ -444,3 +446,24 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor
 
 PRODUCT_PACKAGES += libsensorndkbridge
+
+# RFS symlinks (hardware/qcom-caf/common)
+PRODUCT_PACKAGES += \
+    rfs_msm_adsp_hlos_symlink \
+    rfs_msm_adsp_ramdumps_symlink \
+    rfs_msm_adsp_readonly_firmware_symlink \
+    rfs_msm_adsp_readonly_vendor_firmware_symlink \
+    rfs_msm_adsp_readwrite_symlink \
+    rfs_msm_adsp_shared_symlink \
+    rfs_msm_mpss_hlos_symlink \
+    rfs_msm_mpss_ramdumps_symlink \
+    rfs_msm_mpss_readonly_firmware_symlink \
+    rfs_msm_mpss_readonly_vendor_firmware_symlink \
+    rfs_msm_mpss_readwrite_symlink \
+    rfs_msm_mpss_shared_symlink \
+    rfs_msm_slpi_hlos_symlink \
+    rfs_msm_slpi_ramdumps_symlink \
+    rfs_msm_slpi_readonly_firmware_symlink \
+    rfs_msm_slpi_readonly_vendor_firmware_symlink \
+    rfs_msm_slpi_readwrite_symlink \
+    rfs_msm_slpi_shared_symlink

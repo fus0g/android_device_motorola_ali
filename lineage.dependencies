@@ -3,18 +3,12 @@
     "remote": "github",
     "repository": "fus0g/android_vendor_motorola_ali",
     "target_path": "vendor/motorola/ali",
-    "branch": "lineage-21.0"
-  },
-  {
-    "remote": "github",
-    "repository": "LineageOS/android_system_qcom",
-    "target_path": "system/qcom",
-    "branch": "lineage-21"
+    "branch": "lineage-22.2"
   },
   {
     "remote": "github",
     "repository": "fus0g/android_kernel_motorola_sdm450",
     "target_path": "kernel/motorola/sdm450",
-    "branch": "lineage-21.0"
+    "branch": "lineage-22.2"
   }
 ]
